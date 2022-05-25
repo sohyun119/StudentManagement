@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.DBproject.user.dao.StudentDAO">
+
+	<insert id="insertStudent" parameterType="map">
+		INSERT INTO `Student`
+		(
+			`loginId`
+			, `password`
+			, `Sname`
+			, `SphoneNumber`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES
+		(
+			#{loginId}
+			, #{password}
+			, #{Sname}
+			, #{SphoneNumber}
+			, now()
+			, now()
+		)
+	</insert>
+	
+	<select id="selectStudent" parameterType="map" resultType="com.DBproject.user.model.Student">
+		SELECT 
+			`Student_code`
+			, `loginId`
+			, `password`
+			, `Sname`
+			, `SphoneNumber`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`STUDENT`
+		WHERE
+			`loginId` = #{loginId} AND `password` = #{password}
+	</select>
+
+
+</mapper>
