@@ -27,40 +27,17 @@ public class StudentRestController {
 			@RequestParam("loginId") String loginId,
 			@RequestParam("password") String password,
 			@RequestParam("Sname") String Sname,
-			@RequestParam("SphoneNumber") String SphoneNumber
+			@RequestParam("SphoneNumber") String SphoneNumber,
+			@RequestParam("Saddress") String Saddress
 			){
 		
-		int count = studentBO.signUp(loginId, password, Sname, SphoneNumber);
+		int count = studentBO.signUp(loginId, password, Sname, SphoneNumber, Saddress);
 		
 		Map<String, String> map = new HashMap<>();
 		
 		if(count == 1) {
 			map.put("result", "success");
 		}else {
-			map.put("result", "fail");
-		}
-		
-		return map;
-		
-	}
-	
-	@PostMapping("/sign_in")
-	public Map<String, String> signIn(
-			@RequestParam("loginId") String loginId,
-			@RequestParam("password") String password,
-			HttpServletRequest request
-			){
-		Student student = studentBO.signIn(loginId, password);
-		Map<String, String> map = new HashMap<>();
-		
-		if(student != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("student_code", student.getStudent_code());
-			session.setAttribute("Sname", student.getSname());
-			
-			map.put("result", "success");
-		}
-		else {
 			map.put("result", "fail");
 		}
 		

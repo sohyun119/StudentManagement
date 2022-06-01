@@ -12,7 +12,8 @@ public interface StudentDAO {
 			@Param("loginId") String loginId, 
 			@Param("password") String password, 
 			@Param("Sname") String Sname, 
-			@Param("SphoneNumber") String SphoneNumber
+			@Param("SphoneNumber") String SphoneNumber,
+			@Param("Saddress") String Saddress
 			);
 
 	public Student selectStudent(
@@ -20,5 +21,6 @@ public interface StudentDAO {
 			@Param("password") String password
 			);
 	
+	public int test(@Param("email") String email);
 	
 }

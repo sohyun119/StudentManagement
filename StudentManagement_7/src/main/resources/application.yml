@@ -5,8 +5,8 @@ spring:
   mvc:
     static-path-pattern: /static/**
     view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
+      prefix: /WEB-INF/react
+      suffix: .js
       
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

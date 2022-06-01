@@ -28,10 +28,11 @@ public class TeacherRestController {
 			@RequestParam("password") String password,
 			@RequestParam("Tname") String Tname,
 			@RequestParam("TphoneNumber") String TphoneNumber,
+			@RequestParam("Taddress") String Taddress,
 			@RequestParam("subject") String subject
 			){
 		
-		int count = teacherBO.signUp(loginId, password, Tname, TphoneNumber, subject);
+		int count = teacherBO.signUp(loginId, password, Tname, TphoneNumber, Taddress, subject);
 		
 		Map<String, String> map = new HashMap<>();
 		
@@ -45,28 +46,5 @@ public class TeacherRestController {
 		
 	}
 	
-	@PostMapping("/sign_in")
-	public Map<String, String> signIn(
-			@RequestParam("loginId") String loginId,
-			@RequestParam("password") String password,
-			HttpServletRequest request
-			){
-		Teacher teacher = teacherBO.signIn(loginId, password);
-		Map<String, String> map = new HashMap<>();
-		
-		if(teacher != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("Teacher_code", teacher.getTeacher_code());
-			session.setAttribute("Tname", teacher.getTname());
-			
-			map.put("result", "success");
-		}
-		else {
-			map.put("result", "fail");
-		}
-		
-		return map;
-		
-	}
 
 }

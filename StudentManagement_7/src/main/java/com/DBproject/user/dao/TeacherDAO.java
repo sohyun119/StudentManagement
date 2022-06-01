@@ -13,6 +13,7 @@ public interface TeacherDAO {
 			@Param("password") String password, 
 			@Param("Tname") String Tname, 
 			@Param("TphoneNumber") String TphoneNumber,
+			@Param("Taddress") String Taddress,
 			@Param("subject") String subject
 			);
 

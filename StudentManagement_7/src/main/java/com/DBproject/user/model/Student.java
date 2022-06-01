@@ -9,9 +9,16 @@ public class Student {
 	private String password;
 	private String Sname;
 	private String SphoneNumber;
+	private String Saddress;
 	private Date createdAt;
 	private Date updateAt;
 	
+	public String getSaddress() {
+		return Saddress;
+	}
+	public void setSaddress(String saddress) {
+		Saddress = saddress;
+	}
 	
 	public int getStudent_code() {
 		return Student_code;

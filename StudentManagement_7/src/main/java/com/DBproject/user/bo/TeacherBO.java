@@ -14,11 +14,11 @@ public class TeacherBO {
 	private TeacherDAO teacherDAO;
 	
 	public int signUp(
-			String loginId, String password, String Tname, String TphoneNumber, String subject
+			String loginId, String password, String Tname, String TphoneNumber,String Taddress, String subject
 			) {
 		String encPassword = EncryptUtils.md5(password);
 		
-		return teacherDAO.insertTeacher(loginId, encPassword, Tname, TphoneNumber, subject);
+		return teacherDAO.insertTeacher(loginId, encPassword, Tname, TphoneNumber,Taddress, subject);
 	}
 	
 	public Teacher signIn(

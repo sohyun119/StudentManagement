@@ -9,11 +9,18 @@ public class Teacher {
 	private String password;
 	private String Tname;
 	private String TphoneNumber;
+	private String Taddress;
 	private String subject;
 	private Date createdAt;
 	private Date updatedAt;
 	
 	
+	public String getTaddress() {
+		return Taddress;
+	}
+	public void setTaddress(String taddress) {
+		Taddress = taddress;
+	}
 	public int getTeacher_code() {
 		return Teacher_code;
 	}

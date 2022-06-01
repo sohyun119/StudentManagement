@@ -13,13 +13,17 @@ public class StudentBO {
 	@Autowired
 	private StudentDAO studentDAO;
 	
+	public int test(String email) {
+		return studentDAO.test(email);
+	}
+	
 	
 	public int signUp(
-			String loginId, String password, String Sname, String SphoneNumber
+			String loginId, String password, String Sname, String SphoneNumber, String Saddress
 			) {
 		String encPassword = EncryptUtils.md5(password);
 		
-		return studentDAO.insertStudent(loginId, encPassword, Sname, SphoneNumber );
+		return studentDAO.insertStudent(loginId, encPassword, Sname, SphoneNumber,Saddress );
 	}
 	
 	public Student signIn(
@@ -29,5 +33,7 @@ public class StudentBO {
 		
 		return studentDAO.selectStudent(loginId, encPassword);
 	}
+	
+	
 
 }
