@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+       
+<mapper namespace="com.DBproject.exam.dao.ExamDAO">
+	
+	<select id="selectScoreList" parameterType="int" resultType="com.DBproject.exam.dto.Score">
+		SELECT
+			`Exam_Type`, `Student_Code`, `Subject`, `Score`
+		FROM
+			`Score`
+		WHERE
+			`Student_Code` = #{Student_code}
+	</select>
+
+
+</mapper>

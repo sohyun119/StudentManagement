@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DBproject.problem.dao.ProblemDAO;
+import com.DBproject.problem.dto.Problem;
 import com.DBproject.problem.dto.WrongAnswerAll;
 import com.DBproject.problem.dto.WrongAnswerDetails;
 
@@ -24,15 +25,19 @@ public class ProblemBO {
 			List<WrongAnswerDetails> wrongAnswerDetailsList = problemDAO.selectProblem_Details(studetn_code, subject, wrongAnswerAll.getType());
 			 
 			wrongAnswerAll.setWrongAnswerDetailList(wrongAnswerDetailsList);
-			
 		}
 		
 		return wrongAnswerAllList;
-		
-		
-		
 	}
-	
+
+	public int addWrongAnswer(int Student_code, String subject, String Bname, int Pchap, int Pnumber, String YorNorX) {
+		
+		Problem problem = problemDAO.selectProblem(subject, Bname, Pchap, Pnumber);
+		
+		int count = problemDAO.insertWrongAnswer(problem.getProblem_code(), Student_code, YorNorX, subject, problem.getType());
+		
+		return count;
+	}
 
 	
 	

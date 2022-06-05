@@ -29,49 +29,33 @@ public class UserRestController {
 	
 	@Autowired
 	private TeacherBO teacherBO;
-	
-//	@GetMapping("test1")
-//	public ResponseEntity<Student> tets1() {
-//		
-//		Student student = new Student();
-//		
-//		student.setLoginId("dd");
-//		student.setPassword("pop");
-//		student.setStudent_code(1);
-//		student.setSaddress("서울");
-//		student.setSname("홍길동");
-//		student.setSphoneNumber("010-1234-5678");
-//		
-//		return new ResponseEntity<Student>(student, HttpStatus.OK);
-//
-//	}
-	
+
 
 	@PostMapping("/sign_in")
-	public Map<String, String> signIn(
+	public Map<String, Integer> signIn(
 			@RequestParam("loginId") String loginId, @RequestParam("password") String password
 			, HttpServletRequest request
 			){
 		
 		Student student = studentBO.signIn(loginId, password);
 		Teacher teacher = teacherBO.signIn(loginId, password);
-		Map<String, String> map = new HashMap<>();
+		Map<String, Integer> map = new HashMap<>();
 		
 		if(student != null && teacher == null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("Student_code", student.getStudent_code());
 			session.setAttribute("Sname", student.getSname());
 			
-			map.put("login", "student");
+			map.put("Student_code", student.getStudent_code());
 		}
 		else if(student == null && teacher != null){
 			HttpSession session = request.getSession();
 			session.setAttribute("Teacher_code", teacher.getTeacher_code());
 			session.setAttribute("Tname", teacher.getTname());
-			map.put("login", "teacher");
+			map.put("Teacher_code", teacher.getTeacher_code());
 		}
 		else {
-			map.put("login", "fail");
+			map.put("code", 0);
 		}
 		
 		return map;

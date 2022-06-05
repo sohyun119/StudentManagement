@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DBproject.problem.bo.ProblemBO;
@@ -50,21 +51,29 @@ public class ProblemRestController {
 		
 	}
 	
-//	@GetMapping("test1")
-//	public ResponseEntity<Student> tets1() {
-//		
-//		Student student = new Student();
-//		
-//		student.setLoginId("dd");
-//		student.setPassword("pop");
-//		student.setStudent_code(1);
-//		student.setSaddress("서울");
-//		student.setSname("홍길동");
-//		student.setSphoneNumber("010-1234-5678");
-//		
-//		return new ResponseEntity<Student>(student, HttpStatus.OK);
-//
-//	}
+	@GetMapping("/AddWrongAnswer")
+	public Map<String, String> addWrongAnswer(
+			@RequestParam("subject") String subject, @RequestParam("Bname") String Bname, 
+			@RequestParam("Pchap") int Pchap, @RequestParam("Pnumber") int Pnumber,
+		@RequestParam("YorNorX") String YorNorX, HttpServletRequest request
+			){
+		
+		HttpSession session = request.getSession();
+		int Student_code = (Integer) session.getAttribute("Student_code");
+		
+		int count = problemBO.addWrongAnswer(Student_code, subject, Bname, Pchap, Pnumber, YorNorX);
+		
+		Map<String, String> map = new HashMap<>();
+		if(count == 1) {
+			map.put("result", "success");
+		}
+		else {
+			map.put("result", "fail");
+		}
+		
+		return map;
+	}
+
 	
 
 }
