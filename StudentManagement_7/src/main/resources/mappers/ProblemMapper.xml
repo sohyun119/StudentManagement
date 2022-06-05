@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.DBproject.problem.dao.ProblemDAO">
+
+	<select id="selectProblem_analysis" parameterType="map" resultType="com.DBproject.problem.dto.WrongAnswerAll">
+		SELECT 
+		`type`, count(*) AS 'count' 
+		FROM `Problem_Of_Student`
+		WHERE
+			`Student_code` = #{Student_code}
+			AND `YorNorX` = 'N'
+			AND `subject` = #{subject}
+		GROUP BY `type`
+		ORDER BY count(*) DESC
+		LIMIT 5;
+	</select>
+	
+	<select id="selectProblem_Details" parameterType="map" resultType="com.DBproject.problem.dto.WrongAnswerDetails">
+		SELECT `Bname`, `Pchap`, `Pnumber`
+		FROM `Problem`
+		JOIN `Problem_Of_Student` ON `Problem`.`Problem_Code` = `Problem_Of_Student`.`Problem_code`
+		WHERE 
+			`Student_code` = #{Student_code}
+			AND `YorNorX` = 'N'
+			AND `subject` = #{subject}
+			AND `Problem`.`type` = #{type}
+	</select>
+
+</mapper>

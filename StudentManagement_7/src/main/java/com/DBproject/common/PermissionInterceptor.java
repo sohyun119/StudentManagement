@@ -22,17 +22,17 @@ public class PermissionInterceptor implements HandlerInterceptor{
 		String uri = request.getRequestURI();
 		
 		// 로그인 상태
-		if(session.getAttribute("student_code") != null) {
+		if(( session.getAttribute("student_code") != null ) || ( session.getAttribute("teacher_code") != null )) {
 			if (uri.startsWith("/user")) {
-				response.sendRedirect("study/analysis");
+				response.sendRedirect("/problem/analysis");
 				return false; // 더 이상 이동이 없도록
 			}
 		}
 		
 		// 비로그인 상태
 		else {
-			if(uri.startsWith("/study")) {
-				response.sendRedirect("/user/signin_view");
+			if(uri.startsWith("problem")) {
+				response.sendRedirect("/user/sign_in");
 				return false;
 			}
 		}

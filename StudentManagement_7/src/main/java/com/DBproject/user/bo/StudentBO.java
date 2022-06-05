@@ -21,17 +21,15 @@ public class StudentBO {
 	public int signUp(
 			String loginId, String password, String Sname, String SphoneNumber, String Saddress
 			) {
-		String encPassword = EncryptUtils.md5(password);
-		
-		return studentDAO.insertStudent(loginId, encPassword, Sname, SphoneNumber,Saddress );
+	
+		return studentDAO.insertStudent(loginId, password, Sname, SphoneNumber,Saddress );
 	}
 	
 	public Student signIn(
 			String loginId, String password
 			) {
-		String encPassword = EncryptUtils.md5(password);
 		
-		return studentDAO.selectStudent(loginId, encPassword);
+		return studentDAO.selectStudent(loginId, password);
 	}
 	
 	

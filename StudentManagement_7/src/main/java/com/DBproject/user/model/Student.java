@@ -1,6 +1,5 @@
 package com.DBproject.user.model;
 
-import java.util.Date;
 
 public class Student {
 
@@ -10,8 +9,6 @@ public class Student {
 	private String Sname;
 	private String SphoneNumber;
 	private String Saddress;
-	private Date createdAt;
-	private Date updateAt;
 	
 	public String getSaddress() {
 		return Saddress;
@@ -50,18 +47,7 @@ public class Student {
 	public void setSphoneNumber(String sphoneNumber) {
 		SphoneNumber = sphoneNumber;
 	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public Date getUpdateAt() {
-		return updateAt;
-	}
-	public void setUpdateAt(Date updateAt) {
-		this.updateAt = updateAt;
-	}
+	
 	
 	
 	

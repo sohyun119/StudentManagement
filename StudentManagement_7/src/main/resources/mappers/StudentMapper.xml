@@ -4,13 +4,6 @@
         
 <mapper namespace="com.DBproject.user.dao.StudentDAO">
 
-	<insert id="test" parameterType="string">
-		INSERT INTO `test`
-		(`email`)
-		VALUES
-		(#{email})
-	</insert>
-
 	<insert id="insertStudent" parameterType="map">
 		INSERT INTO `Student`
 		(
@@ -18,8 +11,7 @@
 			, `password`
 			, `Sname`
 			, `SphoneNumber`
-			, `createdAt`
-			, `updatedAt`
+			, `Saddress`
 		)
 		VALUES
 		(
@@ -27,8 +19,7 @@
 			, #{password}
 			, #{Sname}
 			, #{SphoneNumber}
-			, now()
-			, now()
+			, #{Saddress}
 		)
 	</insert>
 	
@@ -39,8 +30,7 @@
 			, `password`
 			, `Sname`
 			, `SphoneNumber`
-			, `createdAt`
-			, `updatedAt`
+			, `Saddress`
 		FROM
 			`STUDENT`
 		WHERE

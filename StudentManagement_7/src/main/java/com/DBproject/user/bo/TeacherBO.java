@@ -16,17 +16,15 @@ public class TeacherBO {
 	public int signUp(
 			String loginId, String password, String Tname, String TphoneNumber,String Taddress, String subject
 			) {
-		String encPassword = EncryptUtils.md5(password);
 		
-		return teacherDAO.insertTeacher(loginId, encPassword, Tname, TphoneNumber,Taddress, subject);
+		return teacherDAO.insertTeacher(loginId, password, Tname, TphoneNumber,Taddress, subject);
 	}
 	
 	public Teacher signIn(
 			String loginId, String password
 			) {
-		String encPassword = EncryptUtils.md5(password);
 		
-		return teacherDAO.selectTeacher(loginId, encPassword);
+		return teacherDAO.selectTeacher(loginId, password);
 	}
 
 }

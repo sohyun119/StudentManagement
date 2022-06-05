@@ -1,6 +1,5 @@
 package com.DBproject.user.model;
 
-import java.util.Date;
 
 public class Teacher {
 	
@@ -11,9 +10,6 @@ public class Teacher {
 	private String TphoneNumber;
 	private String Taddress;
 	private String subject;
-	private Date createdAt;
-	private Date updatedAt;
-	
 	
 	public String getTaddress() {
 		return Taddress;
@@ -57,18 +53,7 @@ public class Teacher {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+
 	
 	
 	
