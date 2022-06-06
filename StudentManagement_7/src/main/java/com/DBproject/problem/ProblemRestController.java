@@ -30,21 +30,22 @@ public class ProblemRestController {
 	public ResponseEntity< Map<String, List<WrongAnswerAll>>> problem_analysis(HttpServletRequest request){
 		
 		HttpSession session = request.getSession();
-		int Student_code = (Integer) session.getAttribute("Student_code");
+//		int Student_code = (Integer) session.getAttribute("Student_code");
+		int Student_code = 1;
 		
 		Map<String, List<WrongAnswerAll>> map = new HashMap<>();
 		
 		List<WrongAnswerAll> MathWrongAnswerAllList = problemBO.problem_analysis(Student_code, "수학");
-		map.put("수학", MathWrongAnswerAllList);
+		map.put("math", MathWrongAnswerAllList);
 		
 		List<WrongAnswerAll> LanguageWrongAnswerAllList = problemBO.problem_analysis(Student_code, "국어");
-		map.put("국어", LanguageWrongAnswerAllList);
+		map.put("language", LanguageWrongAnswerAllList);
 		
 		List<WrongAnswerAll> EnglishWrongAnswerAllList = problemBO.problem_analysis(Student_code, "영어");
-		map.put("영어", EnglishWrongAnswerAllList);
+		map.put("english", EnglishWrongAnswerAllList);
 		
 		List<WrongAnswerAll> ScienceWrongAnswerAllList = problemBO.problem_analysis(Student_code, "과학");
-		map.put("과학", ScienceWrongAnswerAllList);
+		map.put("science", ScienceWrongAnswerAllList);
 		
 		
 		return new ResponseEntity<Map<String, List<WrongAnswerAll>>>(map, HttpStatus.OK);
@@ -53,9 +54,12 @@ public class ProblemRestController {
 	
 	@GetMapping("/AddWrongAnswer")
 	public Map<String, String> addWrongAnswer(
-			@RequestParam("subject") String subject, @RequestParam("Bname") String Bname, 
-			@RequestParam("Pchap") int Pchap, @RequestParam("Pnumber") int Pnumber,
-		@RequestParam("YorNorX") String YorNorX, HttpServletRequest request
+			@RequestParam("subject") String subject, 
+			@RequestParam("Bname") String Bname, 
+			@RequestParam("Pchap") int Pchap, 
+			@RequestParam("Pnumber") int Pnumber,
+		@RequestParam("YorNorX") String YorNorX, 
+		HttpServletRequest request
 			){
 		
 		HttpSession session = request.getSession();

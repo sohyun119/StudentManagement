@@ -21,6 +21,5 @@ public interface StudentDAO {
 			@Param("password") String password
 			);
 	
-	public int test(@Param("email") String email);
 	
 }

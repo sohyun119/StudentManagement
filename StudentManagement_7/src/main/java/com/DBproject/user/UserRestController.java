@@ -32,30 +32,30 @@ public class UserRestController {
 
 
 	@PostMapping("/sign_in")
-	public Map<String, Integer> signIn(
+	public Map<String, String> signIn(
 			@RequestParam("loginId") String loginId, @RequestParam("password") String password
 			, HttpServletRequest request
 			){
 		
 		Student student = studentBO.signIn(loginId, password);
 		Teacher teacher = teacherBO.signIn(loginId, password);
-		Map<String, Integer> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>();
 		
 		if(student != null && teacher == null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("Student_code", student.getStudent_code());
 			session.setAttribute("Sname", student.getSname());
 			
-			map.put("Student_code", student.getStudent_code());
+			map.put("result", "success");
 		}
 		else if(student == null && teacher != null){
 			HttpSession session = request.getSession();
 			session.setAttribute("Teacher_code", teacher.getTeacher_code());
 			session.setAttribute("Tname", teacher.getTname());
-			map.put("Teacher_code", teacher.getTeacher_code());
+			map.put("result", "success");
 		}
 		else {
-			map.put("code", 0);
+			map.put("result", "fail");
 		}
 		
 		return map;

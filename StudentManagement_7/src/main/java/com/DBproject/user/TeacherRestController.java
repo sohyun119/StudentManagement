@@ -26,9 +26,9 @@ public class TeacherRestController {
 	public Map<String, String> signUp(
 			@RequestParam("loginId") String loginId,
 			@RequestParam("password") String password,
-			@RequestParam("Tname") String Tname,
-			@RequestParam("TphoneNumber") String TphoneNumber,
-			@RequestParam("Taddress") String Taddress,
+			@RequestParam("name") String Tname,
+			@RequestParam("phoneNumber") String TphoneNumber,
+			@RequestParam("address") String Taddress,
 			@RequestParam("subject") String subject
 			){
 		

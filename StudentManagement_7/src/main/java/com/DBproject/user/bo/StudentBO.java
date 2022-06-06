@@ -13,10 +13,6 @@ public class StudentBO {
 	@Autowired
 	private StudentDAO studentDAO;
 	
-	public int test(String email) {
-		return studentDAO.test(email);
-	}
-	
 	
 	public int signUp(
 			String loginId, String password, String Sname, String SphoneNumber, String Saddress

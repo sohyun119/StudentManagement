@@ -24,6 +24,21 @@
 			, #{subject}
 		)
 	</insert>
+	
+	<select id="selectTeacher" parameterType="map" resultType="com.DBproject.user.model.Teacher">
+		SELECT 
+			`Teacher_code`
+			, `loginId`
+			, `password`
+			, `Tname`
+			, `TphoneNumber`
+			, `Taddress`
+			, `subject`
+		FROM
+			`TEACHER`
+		WHERE
+			`loginId` = #{loginId} AND `password` = #{password}
+	</select>
 
 
 
