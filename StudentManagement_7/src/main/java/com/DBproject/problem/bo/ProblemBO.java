@@ -1,5 +1,6 @@
 package com.DBproject.problem.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +21,12 @@ public class ProblemBO {
 		
 		List<WrongAnswerAll> wrongAnswerAllList = problemDAO.selectProblem_analysis(studetn_code, subject);
 		
+		
 		for(WrongAnswerAll wrongAnswerAll : wrongAnswerAllList) {
 			
-			List<WrongAnswerDetails> wrongAnswerDetailsList = problemDAO.selectProblem_Details(studetn_code, subject, wrongAnswerAll.getType());
-			 
-			wrongAnswerAll.setWrongAnswerDetailList(wrongAnswerDetailsList);
+			List<WrongAnswerDetails> wrongAnswerDetailList  = problemDAO.selectProblem_Details(studetn_code, subject, wrongAnswerAll.getType());
+			
+			wrongAnswerAll.setWrongAnswerDetailList(wrongAnswerDetailList);
 		}
 		
 		return wrongAnswerAllList;

@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,11 +26,10 @@ public class ProblemRestController {
 	private ProblemBO problemBO;
 	
 	@GetMapping("/analysis")
-	public ResponseEntity< Map<String, List<WrongAnswerAll>>> problem_analysis(HttpServletRequest request){
+	public Map<String, List<WrongAnswerAll>> problem_analysis(HttpServletRequest request, Model model){
 		
 		HttpSession session = request.getSession();
-//		int Student_code = (Integer) session.getAttribute("Student_code");
-		int Student_code = 1;
+		int Student_code = (Integer) session.getAttribute("Student_code");
 		
 		Map<String, List<WrongAnswerAll>> map = new HashMap<>();
 		
@@ -48,8 +46,8 @@ public class ProblemRestController {
 		map.put("science", ScienceWrongAnswerAllList);
 		
 		
-		return new ResponseEntity<Map<String, List<WrongAnswerAll>>>(map, HttpStatus.OK);
 		
+		return map;
 	}
 	
 	@GetMapping("/AddWrongAnswer")

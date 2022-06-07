@@ -64,7 +64,7 @@
 					data:{"loginId":loginId,"password":password},
 					success:function(data){
 						if(data.result == "success"){
-							location.href="/user/signup_view/student";
+							location.href="/problem_view/analysis";
 						}else{
 							alert("아이디 또는 비밀번호를 확인해주세요.");
 						}

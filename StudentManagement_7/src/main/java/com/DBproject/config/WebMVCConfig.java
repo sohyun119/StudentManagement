@@ -15,12 +15,12 @@ public class WebMVCConfig implements WebMvcConfigurer{
 	PermissionInterceptor permissionInterceptor;
 	
 	// 인터셉터 설정으로 비정상 경로 접근 제한
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(permissionInterceptor)
-		.addPathPatterns("/**") // 모든path가 인터셉터 거치도록 
-		.excludePathPatterns("/static/**", "user/sign_out");
-	}
+//	@Override
+//	public void addInterceptors(InterceptorRegistry registry) {
+//		registry.addInterceptor(permissionInterceptor)
+//		.addPathPatterns("/**") // 모든path가 인터셉터 거치도록 
+//		.excludePathPatterns("/static/**", "user/sign_out");
+//	}
 	
 	
 
