@@ -30,14 +30,10 @@
 	
 	
 	<select id="selectProblem" parameterType="map" resultType="com.DBproject.problem.dto.Problem">
-		SELECT `Book_code`, `Bname`, `Problem_code`, `Pchap`, `Pnumber`, `type`
-		FROM `Problem`
-		JOIN `Book` ON `Problem`.`Book_code` = `Book`.`Book_code`
+		SELECT * 
+		FROM `PROBLEM`
 		WHERE 
-			`Book`.`subject` = #{subject}
-			AND `Book`.`Bname` = #{Bname}
-			AND `Problem`.`Pchap` = #{Pchap}
-			AND `Problem`.`Pnumber` = #{Pnumber}
+			`Bname` = #{Bname} AND `Pchap` = #{Pchap} AND `Pnumber` = #{Pnumber}
 	</select>
 	
 	<insert id="insertWrongAnswer" parameterType="map">

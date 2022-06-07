@@ -45,7 +45,7 @@
 						<div class="modal-content">
 							<div class="modal-body">
 								<form id="insertForm">
-									 <select class="form-control mt-3" id="subject" aria-label="Default select example">
+									 <select class="form-control mt-3" name="subject" aria-label="Default select example">
 				                        <option selected>과목명</option>
 										<option value="국어">국어</option>
 										<option value="수학">수학</option>
@@ -53,7 +53,7 @@
 										<option value="과학">과학</option>
 									</select>
 									
-									<select class="form-control mt-3" id="bname" aria-label="Default select example">
+									<select class="form-control mt-3" name="bname" aria-label="Default select example">
 				                        <option selected>책 이름</option>
 										<option value="자이스토리1">자이스토리1</option>
 										<option value="자이스토리2">자이스토리2</option>
@@ -63,7 +63,7 @@
 									
 									<input type="number" id="pnumber" class="form-control mt-3" placeholder="문제 번호 (숫자만 입력하세요)">
 									
-									<select class="form-control mt-3" id="YorNorX" aria-label="Default select example">
+									<select class="form-control mt-3" name="YorNorX" aria-label="Default select example">
 				                        <option selected>채점 여부</option>
 										<option value="Y">맞음</option>
 										<option value="N">틀림</option>
@@ -261,11 +261,11 @@
 			$("#insertForm").on("submit", function(e){
 				e.preventDefault();
 				
-				let subject = $("#subject").val();
-				let bname = $("#bname").val();
+				let subject = $("select[name='subject']").val();
+				let bname = $("select[name='bname']").val();
 				let pchap = $("#pchap").val();
 				let pnumber = $("#pnumber").val();
-				let YorNorX = $("#YorNorX").val();
+				let YorNorX = $("select[name='YorNorX']").val();
 				
 				
 				$.ajax({
