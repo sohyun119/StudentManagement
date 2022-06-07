@@ -10,7 +10,7 @@
 		FROM
 			`Score`
 		WHERE
-			`Student_Code` = #{Student_code}
+			`Student_Code` = #{Student_Code}
 	</select>
 
 

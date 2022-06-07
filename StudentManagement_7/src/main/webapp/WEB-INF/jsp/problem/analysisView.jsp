@@ -29,7 +29,7 @@
 						<a href="/problem_view/analysis" class="nav-link text-dark">오답노트</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link text-dark">시험성적</a>
+						<a href="/score" class="nav-link text-dark">시험성적</a>
 					</li>				
 				</ul>
 			</header>

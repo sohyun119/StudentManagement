@@ -6,32 +6,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.DBproject.exam.bo.ExamBO;
 import com.DBproject.exam.dto.Score;
 
-@RestController
-public class ExamRestController {
+@Controller
+public class ExamController {
 	
 	@Autowired
 	private ExamBO examBO;
 	
-	@GetMapping("/score/test")
-	public ResponseEntity< List<Score> > examList(HttpServletRequest request){
+	@GetMapping("/score")
+	public String examList(HttpServletRequest request, Model model){
 		
 		HttpSession session = request.getSession();
 		
 		int Student_code = (Integer) session.getAttribute("Student_code");
 		
 		List<Score> scoreList = examBO.selectScoreList(Student_code);
+		model.addAttribute("scoreList", scoreList);
 		
-		return new ResponseEntity<List<Score>>(scoreList, HttpStatus.OK);
+		return "exam/examView";
 		
 	}
-	
 
 }

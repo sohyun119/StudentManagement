@@ -11,7 +11,7 @@ import com.DBproject.exam.dto.Score;
 public interface ExamDAO {
 	
 	
-	public List<Score> selectScoreList(@Param("Student_code") int Student_code);
+	public List<Score> selectScoreList(@Param("Student_Code") int Student_code);
 
 	
 
