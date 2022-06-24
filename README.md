@@ -18,42 +18,48 @@
 
   https://ovenapp.io/project/eykfByruaQNbhi6s8jQBJbVjXc3fOtNp#y3duk
 * DB 설계
+
+  https://github.com/sohyun119/StudentManagement/blob/main/DB%EC%84%A4%EA%B3%84.sql
  
   
   
 ###  🔥 주요기능 🔥
 1. 회원 가입 & 로그인 & 다른 유저 찾기 기능
-> - 관련 패키지 : https://github.com/sohyun119/Outstagram/tree/master/src/main/java/com/SH/outstagram/user
-> * 회원 가입 view : https://github.com/sohyun119/Outstagram/blob/master/src/main/webapp/WEB-INF/jsp/user/signUp.jsp
-> * 로그인 view : https://github.com/sohyun119/Outstagram/blob/master/src/main/webapp/WEB-INF/jsp/user/signIn.jsp
-> * 다른 유저 검색 view : https://github.com/sohyun119/Outstagram/blob/master/src/main/webapp/WEB-INF/jsp/user/searchView.jsp
+> - 관련 패키지 : https://github.com/sohyun119/StudentManagement/tree/main/StudentManagement_7/src/main/java/com/DBproject/user
+> * 학생 회원가입 view : https://github.com/sohyun119/StudentManagement/blob/main/StudentManagement_7/src/main/webapp/WEB-INF/jsp/user/signUpView_student.jsp
+> * 선생님 회원가입 view : https://github.com/sohyun119/StudentManagement/blob/main/StudentManagement_7/src/main/webapp/WEB-INF/jsp/user/signUpView_teacher.jsp
+> * 로그인 view : https://github.com/sohyun119/StudentManagement/blob/main/StudentManagement_7/src/main/webapp/WEB-INF/jsp/user/signInView.jsp
 
-2. 타임라인 & 피드 & 게시물 상세보기 & 게시물 올리기 기능
-> - 관련 패키지 : https://github.com/sohyun119/Outstagram/tree/master/src/main/java/com/SH/outstagram/post
-> * 타임라인 view : https://github.com/sohyun119/Outstagram/blob/master/src/main/webapp/WEB-INF/jsp/post/timelineView.jsp
-> * 피드 view : https://github.com/sohyun119/Outstagram/blob/master/src/main/webapp/WEB-INF/jsp/post/feed.jsp
-> * 게시물 상세보기 view : https://github.com/sohyun119/Outstagram/blob/master/src/main/webapp/WEB-INF/jsp/post/detailView.jsp
-> * 게시물 올리기 view : https://github.com/sohyun119/Outstagram/blob/master/src/main/webapp/WEB-INF/jsp/post/createView.jsp
+2. 오답관리 기능
+> - 관련 패키지 : https://github.com/sohyun119/StudentManagement/tree/main/StudentManagement_7/src/main/java/com/DBproject/problem
+> * 오답유형 & 문제리스트 view : https://github.com/sohyun119/StudentManagement/blob/main/StudentManagement_7/src/main/webapp/WEB-INF/jsp/problem/analysisView.jsp
+
+3. 시험성적 모아보기 기능
+> - 관련 패키지 : https://github.com/sohyun119/StudentManagement/tree/main/StudentManagement_7/src/main/java/com/DBproject/exam
+> * 시험성정 모아보기 view : https://github.com/sohyun119/StudentManagement/blob/main/StudentManagement_7/src/main/webapp/WEB-INF/jsp/exam/examView.jsp
 
 
 
 ### 💡 데모 영상 💡
 
-#### ✨ 회원가입 및 로그인 기능
+#### ✨ 회원가입 및 로그인
 ![sign.gif](demo/sign.gif)
 
-#### ✨ 타임라인 화면 및 좋아요, 댓글 달기 기능
+#### ✨ 과목별 오답 유형 분석 페이지 & 유형별 오답목록
 ![timeline.gif](demo/timeline.gif)
 
-#### ✨ 다른 사용자 피드 및 팔로우 기능 ( + 팔로워, 팔로잉 리스트 보기 )
+#### ✨ 오답 입력하기
 ![otherUserFeed.gif](demo/otherUserFeed.gif)
 
-#### ✨ 다른 사용자 검색 기능 
+#### ✨ 시험성적 모아보기
 ![search.gif](demo/search.gif)
 
-#### ✨ 나의 피드(home) 및 게시물 업로드 기능
-![myFeed.gif](demo/myFeed.gif)
 
+### 🌱 추후 개발 계획
+* 보다 간편한 오답문제 입력 폼
+* 더욱 많은 책과 문제에 대한 데이터베이스화
+* 특정 책 구독기능 (구매 여부 판독) -> 구독한 책에 한하여 오답문제의 정보뿐아니라 문제자체를 볼 수 있게 수정
+* 구체화된 시험성적 관리 기능
 
 
 ### 🔎 외부 라이브러리 라이센스
