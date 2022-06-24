@@ -20,6 +20,11 @@
 * DB 설계
 
   https://github.com/sohyun119/StudentManagement/blob/main/DB%EC%84%A4%EA%B3%84.sql
+  
+* 보고서 
+
+  https://docs.google.com/document/d/1CnZr3zE9vK0BrHk-zZfcj2Urmxhqd4sf/edit?usp=sharing&ouid=109161359667124849294&rtpof=true&sd=true
+  <br>12~13페이지 : ER 다이어그램 및 UML 다이어그램
  
   
   
@@ -51,8 +56,7 @@
 #### ✨ 오답 입력하기
 ![otherUserFeed.gif](demo/otherUserFeed.gif)
 
-#### ✨ 시험성적 모아보기
-![search.gif](demo/search.gif)
+
 
 
 ### 🌱 추후 개발 계획
