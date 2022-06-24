@@ -21,10 +21,10 @@
 
   https://github.com/sohyun119/StudentManagement/blob/main/DB%EC%84%A4%EA%B3%84.sql
   
-* 보고서 
+* 보고서 💫 [5페이지] ER 다이어그램 및 UML 다이어그램 설명  / [12~13 페이지] ER 다이어그램 및 UML 다이어그램 그림
 
   https://docs.google.com/document/d/1CnZr3zE9vK0BrHk-zZfcj2Urmxhqd4sf/edit?usp=sharing&ouid=109161359667124849294&rtpof=true&sd=true
-  <br>12~13페이지 : ER 다이어그램 및 UML 다이어그램
+
  
   
   
