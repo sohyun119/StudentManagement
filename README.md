@@ -48,13 +48,13 @@
 ### 💡 데모 영상 💡
 
 #### ✨ 회원가입 및 로그인
-![sign.gif](demo/sign.gif)
+![회원가입및로그인.gif](demo/회원가입및로그인.gif)
 
 #### ✨ 과목별 오답 유형 분석 페이지 & 유형별 오답목록
-![timeline.gif](demo/timeline.gif)
+![analysis.gif](demo/오답관리.gif)
 
 #### ✨ 오답 입력하기
-![otherUserFeed.gif](demo/otherUserFeed.gif)
+![insert.gif](demo/오답insert.gif)
 
 
 
